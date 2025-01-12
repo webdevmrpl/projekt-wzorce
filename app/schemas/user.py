@@ -117,18 +117,6 @@ class UserPasswordChange(BaseModel):
         return value
 
 
-class UserRoleUpdate(BaseModel):
-    """Schema for updating user roles."""
-
-    roles: List[str]
-
-
-class UserActivationToggle(BaseModel):
-    """Schema for toggling user activation."""
-
-    is_active: bool
-
-
 class UserPermission(str, Enum):
     """Enum for user permissions."""
 
