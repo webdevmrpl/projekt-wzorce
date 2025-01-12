@@ -1,0 +1,3 @@
+var.env
+.mypy_cache/
+.vscode/

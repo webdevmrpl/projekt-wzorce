@@ -1,0 +1,19 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Welcome to DX Dummy Service",
+  "steps": [
+    {
+      "title": "Launch",
+      "file": ".devcontainer/devcontainer.json",
+      "description": "Here is defined FastAPI Server launch configuration. You can run it with or without a debugger via VSCode interface.",
+      "line": 71
+    },
+    {
+      "title": "Tasks",
+      "file": ".devcontainer/devcontainer.json",
+      "description": "These are VSCode Tasks predefined directly in `devcontainer.json`. They allow you to start a \"Task\" which just runs a specific command in shell.\n\nIn this example, we have a task called \"Unit Tests\" that will run `pytest`.",
+      "line": 94
+    }
+  ],
+  "isPrimary": true
+}

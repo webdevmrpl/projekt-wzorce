@@ -1,0 +1,19 @@
+services:
+  app:
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    volumes:
+      - ./:/notes
+    environment:
+      DYNAMO_ENDPOINT_URL: "http://notes-dynamodb:8000"
+      AWS_DEFAULT_REGION: "us-east-1"
+      AWS_ACCESS_KEY_ID : "dummyaccess"
+      AWS_SECRET_ACCESS_KEY: "dummysecret"
+      IS_LOCAL: True
+    env_file:
+      - ./app/var.env
+
+    networks:
+      - notes-net
+
+networks:
+  notes-net:

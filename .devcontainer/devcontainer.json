@@ -1,0 +1,86 @@
+{
+  "dockerComposeFile": [
+    "../docker-compose.base.yml",
+    "../docker-compose.devcontainer.yml"
+  ],
+  "service": "app",
+  "containerUser": "root",
+  "name": "notes-api",
+  "workspaceFolder": "/notes",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "configureZshAsDefaultShell": true,
+      "username": "none"
+    },
+    "ghcr.io/devcontainers/features/terraform:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.black-formatter",
+        "formulahendry.docker-explorer",
+        "cweijan.vscode-postgresql-client2",
+        "mhutchie.git-graph",
+        "GitLab.gitlab-workflow",
+        "GitHub.copilot",
+        "vsls-contrib.codetour",
+        "ms-vscode.makefile-tools",
+        "LittleFoxTeam.vscode-python-test-adapter",
+        "hashicorp.terraform",
+        "m4ns0ur.base64",
+        "eamodio.gitlens",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.black-formatter",
+          "editor.formatOnSave": true
+        },
+        "files.watcherExclude": {
+          "**/.git/objects/**": true,
+          "**/.git/subtree-cache/**": true
+        },
+        "codetour.promptForWorkspaceTours": true,
+        "codetour.customTourDirectory": ".devcontainer/code-tours",
+        "database-client.telemetry.usesOnlineServices": false,
+        "python.defaultInterpreterPath": "/app/src/venv/bin/python",
+        "python.interpreter.infoVisibility": "always",
+        "python.testing.pytestArgs": [
+          "--verbose",
+          "-m",
+          "not contract_test"
+        ],
+        "python.testing.unittestEnabled": false,
+        "python.testing.pytestEnabled": true,
+        "python.testing.cwd": "/notes/",
+        "python.testing.autoTestDiscoverOnSaveEnabled": true,
+        "[terraform]": {
+          "editor.defaultFormatter": "hashicorp.terraform",
+          "editor.formatOnSave": true,
+          "editor.formatOnSaveMode": "file"
+        },
+        "[terraform-vars]": {
+          "editor.defaultFormatter": "hashicorp.terraform",
+          "editor.formatOnSave": true,
+          "editor.formatOnSaveMode": "file"
+        },
+        "workbench.colorCustomizations": {
+          "activityBar.background": "#393C4B",
+          "activityBar.foreground": "#FFE400",
+          "activityBar.activeBorder": "#FFE400",
+          "activityBar.inactiveForeground": "#DADADA",
+          "activityBarBadge.background": "#FFE400",
+          "activityBarBadge.foreground": "#393C4B",
+          "titleBar.activeBackground": "#393C4B",
+          "titleBar.activeForeground": "#FFE400",
+          "titleBar.inactiveBackground": "#393C4BAA",
+          "titleBar.inactiveForeground": "#DADADAAA",
+          "statusBar.background": "#393C4B",
+          "statusBar.foreground": "#FFE400",
+          "statusBar.border": "#FFE400"
+        }
+      }
+    }
+  }
+}
